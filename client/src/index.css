@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+*::before,*::after {
+  box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+*::-webkit-scrollbar-track {
+  padding: 2px;
+  background: transparent;
+  border-radius: 19px;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 19px;
+  background: #1A81FF;
+  width: 3px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+div {
+  transition: all .3s ease-in;
+}
+html {
+  scroll-behavior: smooth;
+  background: #EFF6FF;
+  overflow-x: hidden;
+}
+body {
+  margin: 0;
+  color: #1C324A;
+  background: #EFF6FF;
+  overflow-x: hidden;
+}
+section {
+  margin-top: 80px !important;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 4%;
+}
+@media (max-width: 1249px) {
+  .container {
+    padding: 0 1.4%;
+  }
+}
+.bage {
+  margin-top: 40px;
+  margin-bottom: 5px;
+  max-width: 300px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #0084FF;
+  text-align: left;
+}
+.title {
+  margin-bottom: 15px;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 1.5;
+  max-width: 700px;
+}
+.disc {
+  max-width: 495px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #b8b8b8;
+}
+
+
+img {
+  display: block;
+  max-width: 100%;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-input-placeholder {
+  font-size: 18px;
+  font-weight: 100;
+}
+input {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+input:focus {
+  border: none;
+  outline: none;
+}
+
+/* MENU */
+.nav__dropdown {
+    position: fixed;
+    top: -19px;
+    transform: translateY(15%);
+    left: 0;
+    right: 0;
+    height: 0;
+    opacity: 0;
+    margin: 29px 0 0 0;
+    background: transparent;
+    backdrop-filter: blur(25px);
+    background: rgb(239, 246, 255);
+    padding: 0 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    list-style-type: none;
+    transition:opacity .15s step-start, height .14s ease-out;
+}
+.nav__dropdown > * {
+  display: none;
+}
+.nav__dropdown.active {
+    height: 210px;
+    opacity: 1;
+}
+.nav__dropdown.active > * {
+  display: block;
+}
+/* MENU */
+
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
