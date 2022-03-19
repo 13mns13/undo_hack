@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cardano</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <div style="display: none;" id="main">
+      адрес аааааааааааааааааааааааааааааааааааааааааааааааааааааа
+    </div>
+
+    <script>
+  
+      $(document).on("click",'.playpause',function () {
+        let video = $(this).parent()
+         if(video.children(".video").get(0).paused){       
+           video.children(".video").get(0).play();   
+           video.children(".playpause").fadeOut();
+ 
+           }else{      
+             video.children(".video").get(0).pause();
+ 
+             video.children(".playpause").fadeIn();
+ 
+           }
+ 
+         });
+         $(document).on("click",'.video',function () {
+          let video = $(this).parent()
+           if(video.children(".video").get(0).paused){       
+             video.children(".video").get(0).play();   
+             video.children(".playpause").fadeOut();
+ 
+             }else{      
+               video.children(".video").get(0).pause();
+ 
+               video.children(".playpause").fadeIn();
+ 
+             }
+ 
+           });
+     </script>
+  </body>
+</html>

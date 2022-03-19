@@ -1,0 +1,37 @@
+.line {
+    user-select: none;
+    background: no-repeat url(../../img/line-bg.png) center;
+    background-size: cover;
+}
+.line_coll {
+    padding: 125px 10% 53px 40%;
+    display: flex;
+    flex-direction: column;
+}
+.qq {
+    position: relative;
+}
+.qq::before {
+    content: "“";
+    top: 0;
+    left: 0;
+    font-size: 10rem;
+    color: #fff;
+    line-height: 0;
+    position: absolute;
+}
+.line_coll p {
+    max-width: 589.76px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #fff;
+}
+@media (max-width:946px) {
+    .line_coll {
+        padding: 70px 0 10px 0;
+    }
+    .qq::before {
+        font-size: 5.8rem;
+    }
+}
