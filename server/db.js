@@ -15,7 +15,11 @@ export const DB_DATA =  mongoose.model("db_data",
         targetMeanPrice:String,
         info:Object,
         exDividendDate:Date,
-        dividendDate:Date
+        dividendDate:Date,
+        max:Number,
+        s:Date,
+        p:Array,
+        gaps:Object
     })
 )
 
