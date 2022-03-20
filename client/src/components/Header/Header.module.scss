@@ -68,6 +68,7 @@ button a {
 }
 
 .animation {
+    padding-bottom: 150px;
     position: relative;
     width: 100%;
     overflow: hidden;
@@ -77,13 +78,13 @@ button a {
         position: absolute;
         width: 2vw;
         left: 25%;
-        top: -51px;
+        top: -151px;
         animation: spin .5s infinite linear;
     }
     #coin2 {
         position: absolute;
         width: 4vw;
-        top: -51px;
+        top: -151px;
         left: 34%;
         animation: spin .62s infinite linear;
     }
@@ -96,56 +97,56 @@ button a {
     }
     #coin4 {
         position: absolute;
-        top: -51px;
+        top: -151px;
         left: 18%;
         width: 4vw;
         animation: spin .34s infinite linear;
     }
     #coin5 {
         position: absolute;
-        top: -51px;
+        top: -151px;
         left: 40%;
         width: 4vw;
         animation: spin .4s infinite linear;
     }
     #coin6 {
         position: absolute;
-        top: -51px;
+        top: -151px;
         left: 50%;
         width: 4vw;
         animation: spin .555s infinite linear;
     }
     #coin7 {
         position: absolute;
-        top: -51px;
+        top: -151px;
         left: 30%;
         width: 4vw;
         animation: spin .5s infinite linear;
     }
     #coin8 {
         position: absolute;
-        top: -51px;
+        top: -151px;
         left: 70%;
         width: 4vw;
         animation: spin .49s infinite linear;
     }
     #coin9 {
         position: absolute;
-        top: -51px;
+        top: -151px;
         left: 75%;
         width: 4vw;
         animation: spin .4s infinite linear;
     }
     #coin10 {
         position: absolute;
-        top: -51px;
+        top: -151px;
         left: 10%;
         width: 4vw;
         animation: spin .72s infinite linear;
     }
     #coin10 {
         position: absolute;
-        top: -51px;
+        top: -151px;
         left: 10%;
         width: 4vw;
         animation: spin .4s infinite linear;
@@ -172,16 +173,16 @@ button a {
       transform: translate3d(0, 0%, 0);
     }
     25% {
-      transform: translate3d(0, 10%, 0);
+      transform: translate3d(0, 10px, 0);
     }
     50% {
-      transform: translate3d(0, 15%, 0);
+      transform: translate3d(0, 50px, 0);
     }
     75% {
-      transform: translate3d(0, 20%, 0);
+      transform: translate3d(0, 150px, 0);
     }
     100% {
-      transform: translate3d(0, 250%, 0);
+      transform: translate3d(0, 500px, 0);
     }
 }
 

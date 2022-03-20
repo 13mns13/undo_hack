@@ -4,6 +4,7 @@ import classes from './Stock.module.scss'
 import { getDataID, defaultValue } from '../../config';
 import Chart from 'react-apexcharts'
 import Skeleton from '@mui/material/Skeleton';
+import Loading from "../Loading/Loading"
 const Profit = lazy(()=>import("../Profit/Profit"))
 
 const Stock = () => {
@@ -24,15 +25,7 @@ const Stock = () => {
 
     if (!item){
         return (
-          <div className='container' style={{paddingTop:80}}>
-            {[...new Array(3)].map((e,i)=> <Skeleton
-              key={i}
-              sx={{ bgcolor: 'grey.500', margin:'30px 0' }}
-              variant="rectangular"
-              width={"100%"}
-              height={700}
-            />)}
-        </div>
+          <Loading/>
         )
     }
     const state = {

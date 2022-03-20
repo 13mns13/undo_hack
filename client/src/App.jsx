@@ -12,7 +12,6 @@ const Dashboard = lazy(() => import('./components/Dashboard/Dashboard'))
 const Stock = lazy(()=>import("./components/Stock/Stock"))
 
 const  App = () => {
-
   return (
     <div className="App">
         <Nav/>

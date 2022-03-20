@@ -108,7 +108,7 @@ import classes from './Profit.module.scss'
                   
                     <div className={classes.row}>
                         <FormControl sx={{ m: 1, width: '30ch' }} variant="outlined">
-                            <OutlinedInput
+                            <TextField
                             type="number"
                             value={count}
                             onChange={(e)=>{
@@ -116,15 +116,13 @@ import classes from './Profit.module.scss'
                                 setCount(parseInt(e.target.value))
                             }}
                             min={0}
-                            aria-describedby="outlined-weight-helper-text"
-                            inputProps={{
-                            'aria-label': 'weight',
-                            }}
+                            
                         />
                             <FormHelperText id="outlined-weight-helper-text">Время влдаения акций, год/месяц</FormHelperText>
                         </FormControl>
                         <FormControl sx={{ m: 1, width: '30ch' }} variant="outlined">
-                            <OutlinedInput
+                            <TextField 
+                            
                             type="number"
                             value={obj.i}
                             onChange={(e)=>{
@@ -133,10 +131,7 @@ import classes from './Profit.module.scss'
                                 setObj({...obj})
                             }}
                             min={0}
-                            aria-describedby="outlined-weight-helper-text"
-                            inputProps={{
-                            'aria-label': 'weight',
-                            }}
+                           label=""
                         />
                             <FormHelperText id="outlined-weight-helper-text">Инфляция, %</FormHelperText>
                         </FormControl> 

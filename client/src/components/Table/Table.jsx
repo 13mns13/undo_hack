@@ -91,16 +91,14 @@ const Row = ({row,star,setStar})=> {
         <TableRow>
        
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={10}>
-          <Animated animationIn='fadeIn'>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <Box sx={{ margin: 1 }}>
                 <Typography variant="h6" gutterBottom component="div">
                   История
                 </Typography>
-                <Chart options={state.options} series={state.series} type="area" height={350} width="100%" />
+                {open&&<Chart options={state.options} series={state.series} type="area" height={350} width="100%" />}
               </Box>
             </Collapse>
-          </Animated>
 
           </TableCell>
         </TableRow>
