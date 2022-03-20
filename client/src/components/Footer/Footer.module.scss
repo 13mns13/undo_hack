@@ -1,7 +1,7 @@
 .Footer {
     margin: 0 auto;
-   padding: 60px 0;
-    background-color: #1A81FF;
+    padding: 60px 0;
+    background-color: #0084ff42;
     color: #fff;
     .row {
         display: flex;
@@ -46,8 +46,27 @@
     font-weight: 600;
     color: inherit;
     text-decoration: none;
+    color: #1A81FF;
     transition: all .4s ease-in;
     &:hover {
         opacity: .6;
+    }
+}
+
+@media (max-width:479px) {
+    .Footer {
+        .row {
+            flex-direction: column;
+        }
+        .social {
+            margin-top: 20px;
+        }
+    }
+}
+@media (max-width:409px) {
+    .Footer {
+        .copywrite {
+            flex-direction: column;
+        }
     }
 }

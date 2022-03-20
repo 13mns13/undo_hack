@@ -6,8 +6,7 @@
     left: 0;
     right: 0;
     padding: 10px;
-    background-color: rgba(255, 255, 255, 0.524);
-    backdrop-filter: blur(50px);
+    background-color: rgb(255, 255, 255);
 }
 
 .Nav {
@@ -51,7 +50,7 @@
     transform: translateX(-200%);
     transition: all .4s ease-in-out;
 
-    div, button {
+    div, a[data-btn] {
         display: none;
     }
 }
@@ -61,14 +60,14 @@
     height: auto;
     transform: translateX(0);
 
-    div, button {
+    div, a[data-btn] {
         display: flex;
     }
 }
 
 @media (max-width:518px) {
     .Nav {
-        div, button {
+        div, a[data-btn] {
             display: none;
         }
         .menu {

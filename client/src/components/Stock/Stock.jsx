@@ -1,12 +1,18 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState, useEffect, lazy,Suspense} from 'react'
 import {useParams} from "react-router-dom";
 import classes from './Stock.module.scss'
-import { getDataID } from '../../config';
+import { getDataID, defaultValue } from '../../config';
 import Chart from 'react-apexcharts'
+import Skeleton from '@mui/material/Skeleton';
+const Profit = lazy(()=>import("../Profit/Profit"))
 
 const Stock = () => {
+
     const [item, setItem] = useState(null)
+    const [obj, setObj] = useState(defaultValue)
     const _id = useParams()._id
+
+
     useEffect(()=>{
         getDataID(_id).then(e=>{
             if (e.state){
@@ -14,14 +20,26 @@ const Stock = () => {
             }
         })
     },[_id])
+
+
     if (!item){
-        return <div></div>
+        return (
+          <div className='container' style={{paddingTop:80}}>
+            {[...new Array(3)].map((e,i)=> <Skeleton
+              key={i}
+              sx={{ bgcolor: 'grey.500', margin:'30px 0' }}
+              variant="rectangular"
+              width={"100%"}
+              height={700}
+            />)}
+        </div>
+        )
     }
     const state = {
           
         series: [{
           name:item.name,
-          data:  item.history.map(e=>e.close)
+          data:  item.history.map(e=>e.close.toFixed(2))
         }],
         options: {
           chart: {
@@ -47,7 +65,6 @@ const Stock = () => {
       
       
       };
-      console.log(item.p.map(e=>e[0]))
       const state2 = {
           
         series: [
@@ -84,6 +101,8 @@ const Stock = () => {
       
       
       };
+
+      
     return (
         <section className={classes.Stock}>
             <div className='container'>
@@ -98,9 +117,9 @@ const Stock = () => {
                             <a href={item.info.website}>{item.info.website}</a>
                         </div>
                         <div className={classes.col}>
-                            <p>Sector(s): <b>{item.info.sector}</b></p>
-                            <p>Industry: <b>{item.info.industry}</b></p>
-                            <p>Full Time Empoloyees: <b>{item.info.fullTimeEmployees}</b></p>
+                            <p>Сектор(а): <b>{item.info.sector}</b></p>
+                            <p>Промышленность: <b>{item.info.industry}</b></p>
+                            <p>Полная занятость сотрудников: <b>{item.info.fullTimeEmployees}</b></p>
                         </div>
                     </div>
                     <div className={classes.content}>
@@ -119,23 +138,23 @@ const Stock = () => {
                                 d.setDate(d.getDate()+1)
                                 return d.toLocaleDateString()
                             })()}</b></h5>
-                            <p className='disc'>Прогноз цены: <b>91$</b></p>
-                            <p className='disc'>Прогноз ГЭП: <b>1.2$</b></p>
+                            <p className='disc'>Прогноз цены: <b>${item.p[0][0]?.toFixed(2)}</b></p>
+                            <p className='disc'>Прогноз гэп: <b>{(()=>{
+                                const max = item.p[0][0]
+                                
+                                return ((item.max-max)/item.max).toFixed(2)
+                            })()}%</b></p>
                         </div>
                     </div>
                     <h2 className='title'>Котировки</h2>
                     <Chart className={classes.Chart}  options={state.options} series={state.series} type="area" height={350} width="100%" />
                     <h2 className='title'>Прогнозирование</h2>
                     <Chart className={classes.Chart}  options={state2.options} series={state2.series} type="area" height={350} width="100%" />
-                    {/* ТУТ ГРАФИК ПРОГНОЗА И ВЫВОДЫ ПО НЕМУ */}
-                    <p>Исходя из прогносзов, акция достигнит своего максимального значения через 13 дней</p>
-                    <p>Исходя из истории находим 3 участок графика и в начале этого участка дату принимаем за благовременную для вложения в акцию</p>
-
-
-                    <p>Тут расчет по Камневой</p>
-
                 </div>
             </div>
+            <Suspense fallback={""}>
+                <Profit  setObj={setObj} obj={obj}/>
+            </Suspense>
         </section>
     )
 }

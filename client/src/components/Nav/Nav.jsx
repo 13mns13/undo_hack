@@ -5,7 +5,6 @@ import Search from '../UI/inputs/Search'
 import Btn from '../UI/buttons/Btn'
 import classes from './Nav.module.scss'
 
-
 const Nav = () => {
     const [open, setOpen] = useState(false)
    return (
@@ -14,14 +13,18 @@ const Nav = () => {
                 <nav className={classes.Nav}>
                     <Link to="/" className={classes.logo}>UNDO</Link>
                     <Search placeholder='Введите запрос...' />
-                    <Btn>Начать</Btn>
+                    <Btn data-btn href='#Start'>
+                        Календарь
+                    </Btn>
                     <img className={classes.menu} src={menu} onClick={() => {
                         setOpen(e=>!e)
                     }}/>
                 </nav>
                 <div className={[classes.dropdown, open&&classes.active].join(' ')}>
                     <Search placeholder='Введите запрос...' />
-                    <Btn>Начать</Btn>
+                    <Btn data-btn href='#Start'>
+                        Календарь
+                    </Btn>
                 </div>
            </div>
        </div>

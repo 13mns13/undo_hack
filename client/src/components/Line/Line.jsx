@@ -14,7 +14,7 @@ const Line = () => {
                 <div className='container'>
                     <div className={classes.row}>
                         <h3>Начни торговать на лидирующих биржах прямо сейчас</h3>
-                        <Btn data-main style={{marginRight:60}}>Начать!</Btn>
+                        <Btn data-main style={{marginRight:60}}>Участвовать!</Btn>
                         <div id="carouselExampleControlsNoTouching" className="carousel slide" data-bs-touch="false" data-bs-interval="false">
                             <div className="carousel-inner" style={{width:100, heigth:100}}>
                                 <div className="carousel-item" >

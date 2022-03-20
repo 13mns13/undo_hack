@@ -20,7 +20,7 @@ const  App = () => {
           <Route path={"/"} element={
             <Suspense fallback={<Loading/>}>
               <Dashboard/>
-            </Suspense> 
+            </Suspense>
           }/>
            <Route path={"/stock/:_id"} element={
             <Suspense fallback={<Loading/>}>

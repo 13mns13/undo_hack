@@ -1,5 +1,4 @@
 .Stock {
-
     margin-bottom: 60px;
 
     .info {
@@ -24,13 +23,8 @@
     .col {
         display: flex;
         flex-direction: column;
-
-
         h5 {
             margin: 0 0 12px 0;
-            b {
-
-            }
         }
 
         p {
@@ -50,6 +44,24 @@
     .Chart {
         margin-bottom: 40px;
     }
+}
 
+@media (max-width:723px) {
+    .Stock {
+        .info {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .content {
+            flex-direction: column;
+            align-items: flex-start;
 
+            .col ~ .col {
+                padding-top: 20px;
+                margin-top: 20px;
+                border-top: 2px solid rgb(96, 96, 96);
+                width: 100%;
+            }
+        }
+    }
 }

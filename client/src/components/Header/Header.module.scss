@@ -13,6 +13,7 @@
     .blure {
         display: flex;
         align-items: center;
+        padding-bottom: 40px;
         width: 100%;
         height: 100%;
         background: rgba(255, 255, 255, 0.163);
@@ -27,11 +28,11 @@
     }
 
     .row {
-        margin-top: 40px;
         display: flex;
     }
 
     .hero {
+        margin-top: 40px;
         padding: 20px;
         display: flex;
         flex-direction: column;
@@ -49,13 +50,7 @@
         line-height: 1.3;
         text-align: left;
         color: #fff;
-        text-shadow: 0.3px 0.3px 0px rgb(30, 30, 30);
-        span {
-            color: #1A81FF;
-            font-weight: 300 !important;
-            text-shadow: none;
-            text-transform: uppercase;
-        }
+        text-shadow: 0.3px 3px 50px rgb(30, 30, 30);
     }
     .disc {
         margin-bottom: 20px;
@@ -75,7 +70,6 @@ button a {
 .animation {
     position: relative;
     width: 100%;
-    // background: no-repeat url(../../img/h.png);
     overflow: hidden;
     background-size: contain;
 
@@ -91,7 +85,7 @@ button a {
         width: 4vw;
         top: -51px;
         left: 34%;
-        animation: spin .7s infinite linear;
+        animation: spin .62s infinite linear;
     }
     #coin3 {
         position: absolute;
@@ -119,7 +113,7 @@ button a {
         top: -51px;
         left: 50%;
         width: 4vw;
-        animation: spin .1 infinite linear;
+        animation: spin .555s infinite linear;
     }
     #coin7 {
         position: absolute;
@@ -133,12 +127,26 @@ button a {
         top: -51px;
         left: 70%;
         width: 4vw;
-        animation: spin .4s infinite linear;
+        animation: spin .49s infinite linear;
     }
     #coin9 {
         position: absolute;
         top: -51px;
-        left: 750%;
+        left: 75%;
+        width: 4vw;
+        animation: spin .4s infinite linear;
+    }
+    #coin10 {
+        position: absolute;
+        top: -51px;
+        left: 10%;
+        width: 4vw;
+        animation: spin .72s infinite linear;
+    }
+    #coin10 {
+        position: absolute;
+        top: -51px;
+        left: 10%;
         width: 4vw;
         animation: spin .4s infinite linear;
     }
@@ -175,4 +183,37 @@ button a {
     100% {
       transform: translate3d(0, 250%, 0);
     }
-  }
+}
+
+
+@media (max-width:993px) {
+    .Header {
+        .title {
+            margin-bottom: 20px;
+            font-size: 42px;
+        }
+        .row ~ .row {
+            flex-direction: column;
+        }
+    }
+}
+@media (max-width:617px) {
+    .Header {
+        margin-top: 40px;
+        padding: 40px 0 0;
+        height: auto;
+
+        .title {
+            margin-top: 40px;
+            margin-bottom: 5px;
+            font-size: 32px;
+        }
+        .row {
+            flex-direction: column;
+        }
+        video {
+            margin: 0 0 20px 0;
+            width: 100%;
+        }
+    }
+}

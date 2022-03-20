@@ -6,20 +6,24 @@ import russ from '../../img/russ.svg'
 import europ from '../../img/europ.svg'
 import Btn from '../UI/buttons/Btn'
 import classes from './Header.module.scss'
+import ScrollAnimation from 'react-animate-on-scroll';
+
 
 const Header = () => {
     return (
+        <>
+
         <header className={classes.Header}>
             <div className={classes.blure}>
                 <div className='container'>
                     
                     <div className={classes.col}>
-                        <h1 className={classes.title}><span>UNDO</span> - ваш надежный<br/> помощник в мире ценных бумаг!</h1>
+                        <h1 className={classes.title}>Начни инвистировать прямо сейчас вместе с нами!</h1>
                         <div className={classes.row}>
                             <video className={classes.chart} autoPlay loop preload>
                                 <source src={chart}/>
                             </video>
-                            <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel" style={{width:'100%', maxHeight:''}}>
+                            <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel" style={{width:'100%', maxHeight:'', margin:'10px 0'}}>
                                 <div className="carousel-indicators">
                                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
                                     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -59,15 +63,13 @@ const Header = () => {
                                 <img id={classes.coin7} src={c} />
                                 <img id={classes.coin8} src={c} />
                                 <img id={classes.coin9} src={c} />
-
+                                <img id={classes.coin10} src={c} />
                             </div>
                             <div className={classes.hero}>
                                 <p className={classes.disc}>Не задумывайтесь о времени покупки. Мы подскажем когда и что будет выгодным. Начинай вкладывать и зарабатывать на инвестициях уже сейчас!</p>
-                                <Btn data-main style={{maxWidth:250}}>
-                                    <a href='#Start'>
-                                        Попробовать сейчас
-                                        <box-icon name='right-arrow-circle' color='#0084FF'></box-icon>
-                                    </a>
+                                <Btn href='#Start' data-main style={{maxWidth:250}}>
+                                    Попробовать сейчас
+                                    <box-icon name='right-arrow-circle' color='#0084FF'></box-icon>
                                 </Btn>
                             </div>
                         </div>
@@ -75,6 +77,8 @@ const Header = () => {
                 </div>
             </div>
         </header>
+
+        </>
     )
 }
 export default Header

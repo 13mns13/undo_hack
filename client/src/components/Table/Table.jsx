@@ -17,6 +17,8 @@ import Skeleton from '@mui/material/Skeleton';
 import { getTop } from '../../config';
 import Chart from 'react-apexcharts'
 import classes from './Table.module.scss'
+import ScrollAnimation from 'react-animate-on-scroll';
+import {Animated} from "react-animated-css";
 
 const Row = ({row,star,setStar})=> {
     const [open, setOpen] = React.useState(false);
@@ -87,7 +89,9 @@ const Row = ({row,star,setStar})=> {
           </TableCell>
         </TableRow>
         <TableRow>
+       
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={10}>
+          <Animated animationIn='fadeIn'>
             <Collapse in={open} timeout="auto" unmountOnExit>
               <Box sx={{ margin: 1 }}>
                 <Typography variant="h6" gutterBottom component="div">
@@ -96,6 +100,8 @@ const Row = ({row,star,setStar})=> {
                 <Chart options={state.options} series={state.series} type="area" height={350} width="100%" />
               </Box>
             </Collapse>
+          </Animated>
+
           </TableCell>
         </TableRow>
       </React.Fragment>
@@ -124,6 +130,7 @@ const Row = ({row,star,setStar})=> {
   
     return (
         <section className={classes.Table} id='Start'>
+            <ScrollAnimation animateIn='fadeIn' animateOnce={true}>
             <div className='container'>
                 <div className={classes.col}>
                     <h2 className='title'>Дивидендный календарь</h2>
@@ -165,6 +172,7 @@ const Row = ({row,star,setStar})=> {
 
                 </div>
             </div>
+            </ScrollAnimation>
         </section>
     )
 }

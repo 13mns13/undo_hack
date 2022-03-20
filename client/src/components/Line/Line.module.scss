@@ -14,7 +14,7 @@
         align-items: center;
         justify-content: space-between;
         width: 100%;
-        max-width: 1920p;
+        max-width: 1920px;
     }
 
     h3 {
@@ -22,5 +22,26 @@
         font-size: 34px;
         line-height: 1.1;
         color: #fff;
+    }
+}
+
+@media (max-width:549px) {
+    .Line {
+        .blur {
+            padding: 30px 0;
+        }
+        .row {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+        h3 {
+            font-size: 24px;
+            max-width: 300px;
+            text-align: center;
+        }
+        a {
+            margin-right: 0 !important;
+            margin: 15px 0;
+        }
     }
 }

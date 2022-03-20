@@ -4,7 +4,6 @@
     display: flex;
     align-items: center;
     max-height: 50px;
-    outline: none;
     border: none;
     border-radius: 8px;
     background: #0084ff42;
@@ -14,6 +13,7 @@
     font-size: 14px;
     line-height: 1.5;
     color: #0084FF;
+    text-decoration: none;
     
     white-space: nowrap;
     text-align: center;
@@ -23,7 +23,7 @@
     &:hover, &:focus {
         background: #0084FF;
         box-shadow: 0px 85px 77px rgba(0, 132, 255, 0.1), 0px 50.048px 40.1632px rgba(0, 132, 255, 0.07232), 0px 25.704px 18.8496px rgba(0, 132, 255, 0.05616), 0px 10.336px 8.2544px rgba(0, 132, 255, 0.04384), 0px 2.312px 3.5728px rgba(0, 132, 255, 0.02768);
-        color: #fff;
+        color: #fff !important;
     }
 
     box-icon {
@@ -33,8 +33,9 @@
 
 .Btn[data-main] {
     background: #fff;
-    color: #0084FF !important;
+    color: #0084FF;
     &:hover {
+        color: #0084FF !important;
         box-icon {
             transform: translateX(8px);
         }
